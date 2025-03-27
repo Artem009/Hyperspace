@@ -13,6 +13,11 @@ const listUser = async (req, res) => {
     res.status(200).json({ data: users });
 }
 
+const deleteAllUser = async (req, res) => {
+    await userServices.destroy.all();
+    res.status(200).json({ data: 'USER DESTROY' });
+}
+
 const findOneUser = async (req, res) => {
     const { id } = req.params;
     const user = await userServices.read.one.byObj({id});
@@ -45,6 +50,7 @@ const deleteUser = async (req, res) => {
 module.exports = {
     createUser,
     listUser,
+    deleteAllUser,
     findOneUser,
     updateUser,
     deleteUser,

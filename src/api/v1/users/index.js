@@ -6,6 +6,7 @@ const { wrap } = require('../../../base/controller');
 const router = Router();
 router.post('/', wrap(userControllers.createUser));
 router.get('/', wrap(userControllers.listUser));
+router.delete('/', wrap(userControllers.deleteAllUser));
 router.get('/:id', wrap(userControllers.findOneUser));
 router.patch('/:id', wrap(userControllers.updateUser));
 router.delete('/:id', wrap(userControllers.deleteUser));
