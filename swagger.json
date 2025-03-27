@@ -7,10 +7,10 @@
     "termsOfService": "http://swagger.io/terms/",
     "license": {
       "name": "Apache 2.0",
-      "url": "localhost:3000"
+      "url": "http://167.71.35.45:5000"
     }
   },
-  "host": "localhost:3000",
+  "host": "http://167.71.35.45:5000",
   "basePath": "/api/v1",
   "schemes": [
     "http"
