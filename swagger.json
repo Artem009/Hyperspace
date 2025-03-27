@@ -1,0 +1,259 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API documentation",
+    "version": "1.0.5",
+    "title": "API",
+    "termsOfService": "http://swagger.io/terms/",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "localhost:3000"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/user": {
+      "post": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "Create user",
+        "description": "Create user",
+        "operationId": "createUser",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "user",
+        "description": "",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/user/{userId}": {
+      "get": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "user",
+        "description": "",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "Updated user",
+        "description": "Updated user",
+        "operationId": "updateUser",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/UserUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "Delete user",
+        "description": "Delete user",
+        "operationId": "deleteUser",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    },
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://petstore.swagger.io/oauth/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "read:pets": "read your pets",
+        "write:pets": "modify pets in your account"
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "email"
+        },
+        "name": {
+          "type": "string",
+          "example": "name"
+        },
+        "totalBalls": {
+          "type": "number",
+          "example": 100
+        },
+        "userGuess": {
+          "type": "number",
+          "example": 10
+        },
+        "userScore": {
+          "type": "number",
+          "example": 200
+        },
+        "youResult": {
+          "type": "number",
+          "example": 500
+        }
+      },
+      "xml": {
+        "name": "User"
+      }
+    },
+    "UserUpdate": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "email"
+        },
+        "name": {
+          "type": "string",
+          "example": "name"
+        },
+        "totalBalls": {
+          "type": "number",
+          "example": 100
+        },
+        "userGuess": {
+          "type": "number",
+          "example": 10
+        },
+        "userScore": {
+          "type": "number",
+          "example": 200
+        },
+        "youResult": {
+          "type": "number",
+          "example": 500
+        }
+      },
+      "xml": {
+        "name": "UserUpdate"
+      }
+    },
+    "Id": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "ef5e93bc-9178-41a3-8796-6d772d4fe6ef"
+        }
+      },
+      "xml": {
+        "name": "Id"
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
