@@ -4,10 +4,10 @@ const create = ({ email, name, totalBalls, userGuess, userScore, youResult }) =>
     return Users.create({
         email,
         name,
-        totalBalls: +totalBalls,
-        userGuess: +userGuess,
-        userScore: +userScore,
-        youResult: +youResult,
+        totalBalls,
+        userGuess,
+        userScore,
+        youResult,
     });
 };
 

@@ -10,7 +10,7 @@
       "url": "http://167.71.35.45:5000"
     }
   },
-  "host": "167.71.35.45:5000",
+  "host": "localhost:5000",
   "basePath": "/api/v1",
   "schemes": [
     "http"

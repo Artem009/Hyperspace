@@ -3,7 +3,11 @@ const {NotFoundError} = require("../../../errors");
 
 
 const createUser = async (req, res) => {
-    const { email, name, totalBalls, userGuess, userScore, youResult } = req.body;
+    const { email, name } = req.body;
+    const youResult = req.body.youResult ? +req.body.youResult : null;
+    const totalBalls = req.body.totalBalls ? +req.body.totalBalls : null;
+    const userGuess = req.body.userGuess ? +req.body.userGuess : null;
+    const userScore = req.body.userScore ? +req.body.userScore : null;
     const user = await userServices.create({ email, name, totalBalls, userGuess, userScore, youResult });
     res.status(200).json({ data: user });
 }
