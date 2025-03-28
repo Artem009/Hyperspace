@@ -15,6 +15,6 @@ module.exports = {
         })
     },
     all: {
-        list: () => Users.findAll({ attributes })
+        list: () => Users.findAll({ attributes, order: [['userScore', 'ASC']] })
     },
 }
